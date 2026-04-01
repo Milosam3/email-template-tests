@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Email Template 4 - Upsell Offer</title>
+    <style type="text/css">
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        body, html { margin: 0; padding: 0; width: 100% !important; }
+        table { border-collapse: collapse; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { width: 100%; max-width: 600px; margin: 0 auto; }
+        .hero { background-color: #fd7e14; color: white; text-align: center; padding: 20px; }
+        .zigzag-text { padding: 20px; background: #fff3cd; }
+        .zigzag-img { padding: 20px; }
+        .cta { background: #198754; color: white; text-align: center; padding: 25px; }
+        .cta a { background: #0dcaf0; color: #000; padding: 18px 36px; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        .footer { background: #212529; color: white; padding: 20px; text-align: center; font-size: 12px; }
+        @media screen and (min-width: 600px) {
+            .zigzag-left { float: left; width: 50%; padding-right: 10px; }
+            .zigzag-right { float: right; width: 50%; padding-left: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <table class="container" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr><td class="hero">
+            <h1 style="font-family: Arial, sans-serif;">Upgrade Today!</h1>
+            <img src="https://via.placeholder.com/600x220/fd7e14/ffffff?text=Upgrade+Offer" alt="Upgrade">
+        </td></tr>
+        <tr><td>
+            <div class="zigzag-img"><img src="https://via.placeholder.com/300x200/fff3cd/333?text=Premium+Features" alt="Features"></div>
+            <div class="zigzag-text">
+                <h2 style="font-family: Arial, sans-serif;">Premium Perks</h2>
+                <p>List benefits.</p>
+            </div>
+        </td></tr>
+        <tr><td>
+            <div class="zigzag-text zigzag-left">
+                <h2 style="font-family: Arial, sans-serif;">Why Upgrade</h2>
+                <p>Customer stories.</p>
+            </div>
+            <div class="zigzag-img zigzag-right"><img src="https://via.placeholder.com/300x200/ffffff/333?text=Testimonial" alt="Testimonial"></div>
+        </td></tr>
+        <tr><td class="cta">
+            <a href="#upgrade">Get 20% Off Upgrade</a>
+        </td></tr>
+        <tr><td class="footer">
+            <p>Support | Terms</p>
+        </td></tr>
+    </table>
+</body>
+</html>
