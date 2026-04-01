@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Email Template 3 - Webinar Invite</title>
+    <style type="text/css">
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        body, html { margin: 0; padding: 0; width: 100% !important; }
+        table { border-collapse: collapse; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { width: 100%; max-width: 600px; margin: 0 auto; }
+        .hero { background-color: #17a2b8; color: white; padding: 25px; text-align: center; }
+        .zigzag-text { padding: 20px; background: #d1ecf1; }
+        .zigzag-img { padding: 20px; }
+        .cta { background: #20c997; color: white; text-align: center; padding: 30px; }
+        .cta a { background: #007bff; color: white; padding: 15px 35px; text-decoration: none; border-radius: 30px; }
+        .footer { background: #495057; color: white; padding: 20px; text-align: center; font-size: 12px; }
+        @media screen and (min-width: 600px) {
+            .zigzag-left { float: left; width: 50%; }
+            .zigzag-right { float: right; width: 50%; }
+        }
+    </style>
+</head>
+<body>
+    <table class="container" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr><td class="hero">
+            <img src="https://via.placeholder.com/600x200/17a2b8/ffffff?text=Join+Our+Webinar" alt="Webinar">
+        </td></tr>
+        <tr><td>
+            <div class="zigzag-img"><img src="https://via.placeholder.com/300x150/d1ecf1/333?text=Speaker" alt="Speaker"></div>
+            <div class="zigzag-text">
+                <h2 style="font-family: Arial, sans-serif;">Expert Speaker</h2>
+                <p>Topic details here.</p>
+            </div>
+        </td></tr>
+        <tr><td>
+            <div class="zigzag-text zigzag-left">
+                <h2 style="font-family: Arial, sans-serif;">What You'll Learn</h2>
+                <p>Key takeaways.</p>
+            </div>
+            <div class="zigzag-img zigzag-right"><img src="https://via.placeholder.com/300x150/ffffff/333?text=Agenda" alt="Agenda"></div>
+        </td></tr>
+        <tr><td class="cta">
+            <a href="#register">Reserve Your Spot</a>
+        </td></tr>
+        <tr><td class="footer">
+            <p>Contact | Unsubscribe</p>
+        </td></tr>
+    </table>
+</body>
+</html>
