@@ -1,0 +1,514 @@
+<!--
+=================================================================
+  CRUNCHBOX EMAIL TEMPLATE — REUSABLE
+=================================================================
+  HOW TO USE THIS TEMPLATE EACH SEND:
+
+  1. SUBJECT LINE  — update in Klaviyo before sending
+  2. HERO IMAGE    — design in Canva (1200x800px), upload,
+                     paste URL into the <img src="..."> below
+  3. HEADLINE      — update .email-headline in the body
+  4. BODY COPY     — update paragraphs in .body-content
+  5. INSPO CARD    — update the teal card with this week's tip
+  6. CTA BUTTON    — update href to the relevant product page
+  7. FIRST NAME    — replace [First name] with Klaviyo tag:
+                     {{ first_name|default:'there' }}
+
+  Everything else (logo, cause banner, social, footer)
+  stays the same every send. Don't touch those.
+=================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Your lunchbox formula for the week (steal this) 🥪</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lato:wght@400;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #f5f5f0;
+      font-family: 'Lato', Arial, sans-serif;
+      color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .email-wrapper {
+      background-color: #f5f5f0;
+      padding: 40px 20px;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* ─── TOP BAR ─── */
+    .top-bar {
+      background-color: #2a9d8f;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .top-bar p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ─── LOGO HEADER ─── */
+    .logo-header {
+      background-color: #ffffff;
+      padding: 28px 40px;
+      text-align: center;
+      border-bottom: 1px solid #f0ede8;
+    }
+    .logo-header .logo-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: -0.02em;
+    }
+    .logo-header .logo-text span {
+      color: #2a9d8f;
+    }
+    .logo-tagline {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ─── HERO SECTION ─── */
+    .hero {
+      background-color: #e8f7f5;
+      padding: 48px 40px 40px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #2a9d8f;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #2a9d8f;
+    }
+    .hero-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+      max-width: 420px;
+      margin: 0 auto 32px;
+    }
+
+    /* ─── LUNCHBOX VISUAL ─── */
+    .lunchbox-visual {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      margin: 0 auto;
+      max-width: 420px;
+      border: 2px dashed #d4ede9;
+    }
+    .lunchbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .lunchbox-cell {
+      background-color: #f8fffe;
+      border: 1.5px solid #c8e8e4;
+      border-radius: 10px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .lunchbox-cell.wide {
+      grid-column: 1 / -1;
+    }
+    .cell-emoji {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .cell-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: #2a9d8f;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .cell-example {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* ─── BODY CONTENT ─── */
+    .body-content {
+      padding: 40px 40px 32px;
+      background-color: #ffffff;
+    }
+    .body-content p {
+      font-family: 'Lato', sans-serif;
+      font-size: 16px;
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .body-content p strong {
+      color: #1a1a1a;
+    }
+
+    /* ─── FORMULA LIST ─── */
+    .formula-list {
+      background-color: #f8fffe;
+      border-left: 4px solid #2a9d8f;
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .formula-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid #e8f5f3;
+    }
+    .formula-item:last-child {
+      border-bottom: none;
+    }
+    .formula-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+    }
+    .formula-text {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: #333;
+      line-height: 1.4;
+      padding-top: 2px;
+    }
+    .formula-text strong {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #2a9d8f;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* ─── THIS WEEK INSPO CARD ─── */
+    .inspo-card {
+      background: linear-gradient(135deg, #2a9d8f 0%, #21867a 100%);
+      border-radius: 12px;
+      padding: 28px 28px;
+      margin: 28px 0;
+    }
+    .inspo-card .inspo-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+    }
+    .inspo-card .inspo-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 14px;
+    }
+    .inspo-card .inspo-body {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+    }
+
+    /* ─── CTA BUTTON ─── */
+    .cta-wrap {
+      text-align: center;
+      padding: 28px 0 8px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background-color: #2a9d8f;
+      color: #ffffff !important;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border-radius: 50px;
+    }
+
+    /* ─── CAUSE BANNER ─── */
+    .cause-banner {
+      background-color: #1a1a1a;
+      padding: 28px 40px;
+      text-align: center;
+    }
+    .cause-banner .cause-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .cause-banner p {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .cause-banner p strong {
+      color: #ffffff;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      height: 1px;
+      background-color: #f0ede8;
+      margin: 0;
+    }
+
+    /* ─── SOCIAL BAR ─── */
+    .social-bar {
+      background-color: #ffffff;
+      padding: 28px 40px;
+      text-align: center;
+    }
+    .social-bar p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 16px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #f0ede8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.2s;
+    }
+    .social-icon:hover {
+      background-color: #d4ede9;
+    }
+    .social-hashtag {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #2a9d8f;
+      margin-top: 14px;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background-color: #f5f5f0;
+      padding: 24px 40px;
+      text-align: center;
+      border-top: 1px solid #e8e5e0;
+    }
+    .footer p {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      color: #999;
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+    .footer a {
+      color: #2a9d8f;
+      text-decoration: none;
+    }
+    .footer .footer-logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+    .footer .footer-logo span { color: #2a9d8f; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 480px) {
+      .hero { padding: 36px 24px 32px; }
+      .hero h1 { font-size: 26px; }
+      .body-content { padding: 28px 24px; }
+      .logo-header { padding: 22px 24px; }
+      .cause-banner { padding: 24px 24px; }
+      .social-bar { padding: 24px 24px; }
+      .footer { padding: 20px 24px; }
+      .inspo-card { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <div class="email-container">
+
+      <!-- TOP BAR -->
+      <div class="top-bar">
+        <p>🇿🇦 Free delivery on orders over R1200 &nbsp;·&nbsp; Proudly made in South Africa</p>
+      </div>
+
+      <!-- LOGO -->
+      <div class="logo-header">
+        <div class="logo-text">My<span>Crunch</span>box</div>
+        <div class="logo-tagline">Made by a mom, loved by kids</div>
+      </div>
+
+      <!-- ============================================================
+           HERO IMAGE — SWAP THIS EACH SEND
+           1. Design your image in Canva at 1200 x 800px
+           2. Download as JPG (high quality)
+           3. Upload to your image host (Klaviyo, Google Drive, Imgur etc.)
+           4. Replace the src URL below with your image link
+           5. Update the alt text to describe this email's theme
+           ============================================================ -->
+      <a href="https://mycrunchbox.co.za" style="display:block; text-decoration:none;">
+        <img
+          src="https://placehold.co/600x400/e8f7f5/2a9d8f?text=Your+Canva+Hero+Image+Here%0A(1200+x+800px+recommended)"
+          alt="This week's lunchbox inspiration from Crunchbox"
+          width="600"
+          style="display:block; width:100%; max-width:600px; height:auto; border:0;"
+        />
+      </a>
+      <!-- ============================================================ -->
+
+      <!-- ============================================================
+           HEADLINE — UPDATE EACH SEND
+           ============================================================ -->
+      <div style="background:#ffffff; padding: 32px 40px 0; text-align:center;">
+        <div style="font-family:'Poppins',sans-serif; font-size:11px; font-weight:600; color:#2a9d8f; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:12px;">
+          This week's lunchbox tip <!-- ← update this eyebrow text -->
+        </div>
+        <h1 class="email-headline" style="font-family:'Poppins',sans-serif; font-size:28px; font-weight:700; color:#1a1a1a; line-height:1.25; letter-spacing:-0.02em; margin-bottom:12px;">
+          Your lunchbox formula —<br><span style="color:#2a9d8f;">steal this</span> 🥪
+          <!-- ↑ UPDATE THIS HEADLINE each send -->
+        </h1>
+        <p style="font-family:'Lato',sans-serif; font-size:15px; color:#666; line-height:1.6; max-width:440px; margin:0 auto 8px;">
+          We know the 6am lunchbox panic is real. You're half-awake, the kids are already loud, and somehow you're supposed to produce a nutritious lunch before the school run.
+          <!-- ↑ UPDATE this intro line each send -->
+        </p>
+      </div>
+      <!-- ============================================================ -->
+
+      <!-- BODY -->
+      <div class="body-content">
+        <p>Hi [First name],</p>
+        <p>So we wanted to share the formula we always come back to — simple, balanced, and Crunchbox-approved:</p>
+
+        <div class="formula-list">
+          <div class="formula-item">
+            <span class="formula-icon">🥪</span>
+            <div class="formula-text"><strong>1 carb</strong>sandwich, wrap, rice cakes, crackers</div>
+          </div>
+          <div class="formula-item">
+            <span class="formula-icon">🍗</span>
+            <div class="formula-text"><strong>1 protein</strong>chicken, egg, cheese, hummus</div>
+          </div>
+          <div class="formula-item">
+            <span class="formula-icon">🍓</span>
+            <div class="formula-text"><strong>2 fruit or veg</strong>whatever's in season, whatever they'll actually eat</div>
+          </div>
+          <div class="formula-item">
+            <span class="formula-icon">🍪</span>
+            <div class="formula-text"><strong>1 small treat</strong>because joy is also a food group</div>
+          </div>
+        </div>
+
+        <p>That's it. Five compartments, five decisions, done.</p>
+        <p>The beauty of your Crunchbox is that the compartments are literally sized as a guide — so you're not guessing, you're just filling.</p>
+
+        <div class="inspo-card">
+          <div class="inspo-label">✨ This week's inspo</div>
+          <div class="inspo-title">Try this combination</div>
+          <div class="inspo-body">Cucumber sticks + cherry tomatoes in the veg compartments, a boiled egg for protein, a mini pita with cream cheese, and a couple of biscuits for the treat. Quick. Easy. Colourful. Kids approved. 🙌</div>
+        </div>
+
+        <div class="cta-wrap">
+          <a href="https://mycrunchbox.co.za/collections/accessories" class="cta-btn">Level up your lunchbox →</a>
+        </div>
+
+        <p style="text-align:center; font-size:13px; color:#aaa; margin-top: 20px;">
+          Made by a mom, loved by kids — and proudly South African. 🧡
+        </p>
+      </div>
+
+      <!-- CAUSE BANNER -->
+      <div class="cause-banner">
+        <div class="cause-icon">🍱</div>
+        <p><strong>Every Crunchbox sold feeds a child for a day</strong> through our partnership with the Peninsula School Feeding Association. Thank you for being part of that.</p>
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="divider"></div>
+      <div class="social-bar">
+        <p>Follow us for daily lunchbox inspo</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/mycrunchbox" class="social-icon" title="Instagram">📷</a>
+          <a href="https://www.facebook.com/mycrunchbox" class="social-icon" title="Facebook">👍</a>
+          <a href="https://www.tiktok.com/@mycrunchbox" class="social-icon" title="TikTok">🎵</a>
+        </div>
+        <div class="social-hashtag">#mycrunchbox &nbsp;·&nbsp; #lunchboxlove &nbsp;·&nbsp; #proudlySA</div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer">
+        <div class="footer-logo">My<span>Crunch</span>box</div>
+        <p>Gardens, Cape Town &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#8ce5e2eae3cce1f5effef9e2efe4eee3f4a2efe3e1"><span class="__cf_email__" data-cfemail="86efe8e0e9c6ebffe5f4f3e8e5eee4e9fea8e5e9eb">[email&#160;protected]</span></a></p>
+        <p>Mon–Fri: 9am–3pm &nbsp;·&nbsp; Free delivery on orders over R1200</p>
+        <p style="margin-top: 10px;">
+          You're receiving this because you signed up for Crunchbox updates.<br>
+          <a href="#">Manage preferences</a> &nbsp;·&nbsp; <a href="#">Unsubscribe</a>
+       
