@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Email Template 5 - Cart Abandonment</title>
+    <style type="text/css">
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        body, html { margin: 0; padding: 0; width: 100% !important; }
+        table { border-collapse: collapse; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { width: 100%; max-width: 600px; margin: 0 auto; }
+        .hero { background-color: #6f42c1; color: white; padding: 25px; text-align: center; }
+        .zigzag-text { padding: 20px; background: #e2d9f3; }
+        .zigzag-img { padding: 20px; }
+        .cta { background: #dc3545; color: white; text-align: center; padding: 30px; }
+        .cta a { background: #ffc107; color: #000; padding: 20px 40px; text-decoration: none; border-radius: 5px; font-size: 18px; }
+        .footer { background: #343a40; color: white; padding: 20px; text-align: center; font-size: 12px; }
+        @media screen and (min-width: 600px) {
+            .zigzag-left { float: left; width: 50%; }
+            .zigzag-right { float: right; width: 50%; }
+        }
+    </style>
+</head>
+<body>
+    <table class="container" role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr><td class="hero">
+            <img src="https://via.placeholder.com/600x200/6f42c1/ffffff?text=Complete+Your+Purchase" alt="Cart">
+            <h2 style="font-family: Arial, sans-serif; margin: 10px 0;">Forgot Something?</h2>
+        </td></tr>
+        <tr><td>
+            <div class="zigzag-img"><img src="https://via.placeholder.com/300x200/e2d9f3/333?text=Your+Items" alt="Items"></div>
+            <div class="zigzag-text">
+                <h2 style="font-family: Arial, sans-serif;">Your Cart Awaits</h2>
+                <p>Items left behind.</p>
+            </div>
+        </td></tr>
+        <tr><td>
+            <div class="zigzag-text zigzag-left">
+                <h2 style="font-family: Arial, sans-serif;">Special Incentive</h2>
+                <p>Extra 10% off to complete.</p>
+            </div>
+            <div class="zigzag-img zigzag-right"><img src="https://via.placeholder.com/300x200/ffffff/333?text=Incentive" alt="Incentive"></div>
+        </td></tr>
+        <tr><td class="cta">
+            <a href="#checkout">Back to Cart</a>
+        </td></tr>
+        <tr><td class="footer">
+            <p>Help | Unsubscribe</p>
+        </td></tr>
+    </table>
+</body>
+</html>
